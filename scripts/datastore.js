@@ -4,7 +4,14 @@
 
   var App = window.App || {};
 
-  //Creating a Data store constructor for storing order info
+  /*
+  
+    Data store constructor for storing order info
+    create a new object var asd = new App.DataStore();
+    add data to it asd.add("asd@asd.com", "espresso");
+    same with get, getAll and remove;
+
+  */
   function DataStore() {
     this.data = {};
   }
