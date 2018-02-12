@@ -13,6 +13,65 @@
     <h1>CoffeRun</h1>
   </header>
 
+  <!-- Alert box -->
+  <section>
+    <div class="alert alert-success" style="display: none;">
+      <div class="container" id="firstAlert">
+        <h4>You've ordered the BIGGEST and HEAVIEST coffe we have to offer!</h4>
+        <form id="superpowers" data-super-powers="form">
+          <label for="superpowers">Would you like to use you'r achievement?</label>
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="sure" value="yes">
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="sure" value="no">
+                No
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="container" id="secondAlert" style="display: none;">
+        <h4>Choose a super power: </h4>
+        <form id="powers" data-handle-powers="form">
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="powers" value="timetravel">
+                Time travel
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="powers" value="mindreading">
+                Mind reading
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="powers" value="bugfree">
+                Bug-free code
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="container" id="thanks" style="display: none;">
+        <h4>
+          You will be granted <span id="givenpower"></span>.
+          Thank you for ordering from CoffeRun! :)
+        </h4>
+      </div>
+    </div>
+  </section>
+
   <!--Coffe order form-->
   <section>
     <div class="panel panel-default">
@@ -60,8 +119,8 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="strengthLevel">Caffeine rating</label>
-            <input type="range" name="strength" id="strengthLevel" value="30">
+            <label for="strengthLevel">Caffeine rating <span class="strengthLevel">0</span></label>
+            <input type="range" name="strength" id="strengthLevel" value="0">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
           <button type="reset" class="btn btn-default">Reset</button>
@@ -70,8 +129,14 @@
     </div>
   </section>
 
+  <!-- Bootstrap for modal -->
+  <script src="bootstrap.min.js" charset="utf-8"></script>
+
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- Adds visual effects-->
+  <script src="scripts/effects.js" charset="utf-8"></script>
 
   <!-- Handles form data -->
   <script src="scripts/formhandler.js" charset="utf-8"></script>

@@ -6,8 +6,6 @@
   //Import App
   var App = window.App || {};
 
-
-
   //Import jQuery
   var $ = window.jQuery;
 
@@ -30,21 +28,28 @@
 
   //Formhandler method for adding submit listener, can use any callback function
   FormHandler.prototype.addSubmitHandler = function(fn) {
-    console.log("setting submit handler for form");
+    //console.log("setting submit handler for form");
     this.$formElement.on("submit", function(event) {
 
       //Cancel form submittion
       event.preventDefault();
 
-      //Assign all of the orders values to one data object
+      //Assign all of the values to one data object
       var data = {};
       $(this).serializeArray().forEach(function(item) {
         data[item.name] = item.value;
         console.log(item.name + " is " + item.value);
       });
       console.log(data);
+      if ( data.size === "godzilla" && data.strength === "100") {
+        $(".alert").css("display", "block")
+          .hide()
+            .slideDown(1000);
+      }
       fn(data);
       this.reset();
+      $(".strengthLevel").html("0");
+      $(".strengthLevel").css("color", "");
       this.elements[0].focus();
     });
   };
