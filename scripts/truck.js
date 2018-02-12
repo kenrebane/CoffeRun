@@ -54,7 +54,10 @@
     }.bind(this));
   }
 
+  //Assigning truck to global namespace
   App.Truck = Truck;
+
+  //Reassigning app
   window.App = App;
 
 })(window);
