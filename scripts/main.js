@@ -16,8 +16,7 @@ Truck(truck.js).
   //Creating an instance of Truck
   var myTruck = new Truck( "Super Coffe Truck", new DataStore() );
 
-
   //Exporting the instance of Truck to global namespace
   window.myTruck = myTruck;
-  
+
 })(window);

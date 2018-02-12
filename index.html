@@ -4,9 +4,64 @@
 <head>
   <meta charset="utf-8">
   <title>CoffeRun</title>
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
 </head>
 
-<body>
+<body class="container">
+
+  <header>
+    <h1>CoffeRun</h1>
+  </header>
+
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffe-order="form">
+          <div class="form-group">
+            <label for="coffeOrder">Coffe order</label>
+            <input class="form-control" name="coffe" id="coffeOrder" autofocus>
+          </div>
+          <div class="form-group">
+            <label for="emailInput">E-mail</label>
+            <input type="email" class="form-control" name="emailAdress" id="emailInput" value="" placeholder="james@bond.com">
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="short">
+              Short
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="tall" checked>
+              Tall
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="grande">
+              Grande
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="flavorShot">Flavor shot</label>
+            <select class="form-control" name="flavor" id="flavorShot">
+              <option value="">none</option>
+              <option value="caramel">Caramel</option>
+              <option value="almond">Almond</option>
+              <option value="mocha">Mocha</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine rating</label>
+            <input type="range" name="strength" id="strengthLevel" value="30">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!--
 DataStore is a small db for storing coffe orders as key value pairs
@@ -15,7 +70,7 @@ email(key) and value(type of coffe);
   <script src="scripts/datastore.js" charset="utf-8"></script>
 
   <!--
-Truck is for taking orders and and assigning them to a specific truck
+Truck is for taking orders and assigning them to a specific truck
 -->
   <script src="scripts/truck.js" charset="utf-8"></script>
 
