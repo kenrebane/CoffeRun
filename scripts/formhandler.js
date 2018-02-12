@@ -34,7 +34,7 @@
       //Cancel form submittion
       event.preventDefault();
 
-      //Assign all of the values to one data object
+      //Assign all of the values to one data object and pass it to callback
       var data = {};
       $(this).serializeArray().forEach(function(item) {
         data[item.name] = item.value;

@@ -11,6 +11,7 @@
   var FORM_SELECTOR = "[data-coffe-order='form']";
   var SUPER_POWERS = "[data-super-powers='form']";
   var HANDLE_POWER = "[data-handle-powers='form']";
+  var CHECKLIST_SELECTOR = "[data-coffe-order='checklist']";
   var App = window.App;
 
   //Assigning constructors to local variables
@@ -19,6 +20,7 @@
   var FormHandler = App.FormHandler;
   var HandleAlert = App.HandleAlert;
   var HandlePowers = App.HandlePowers;
+  var Checklist = App.Checklist;
 
 
   //Creating a instance of truck
@@ -31,9 +33,16 @@
   var formHandler = new FormHandler(FORM_SELECTOR);
   var superPowers = new FormHandler(SUPER_POWERS);
   var handlePower = new FormHandler(HANDLE_POWER);
+  var checkList = new Checklist(CHECKLIST_SELECTOR);
 
-  //Calling formHandler on pageload
-  formHandler.addSubmitHandler(myTruck.createOrder.bind(myTruck));
+  //Calling formHandlers on pageload
+  formHandler.addSubmitHandler(function(data) {
+    myTruck.createOrder.call(myTruck, data);
+    console.log(checkList, data);
+    checkList.addRow.call(checkList, data);
+
+  });
+  checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
   superPowers.addSubmitHandler(HandleAlert);
   handlePower.addSubmitHandler(HandlePowers);
   //console.log(formHandler);

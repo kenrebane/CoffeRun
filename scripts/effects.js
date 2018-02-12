@@ -37,6 +37,8 @@
         $("#secondAlert").css("display", "block");
         $(".alert").slideDown(1000);
       }, 1000);
+    } else {
+      $(".alert").slideUp(1000);
     }
 
   }
